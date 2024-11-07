@@ -1,0 +1,44 @@
+{% extends "AdminZone/adminmaster.html" %}
+{% block content %}
+  
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-12">
+        <table class="table table-responsiv table-bordered" style="color: black">
+            <thead>
+            <tr>
+                <th>Sr.No</th>
+                 <th>Name</th>
+                 <th>Email Address</th>
+                <th>Mobile Number</th>
+                <th>Message</th>
+                <th>Delete</th>
+                <th>Response</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for x in data %}
+                <tr>
+                <td>{{ x.id }}</td>
+                 <td>{{ x.name }}</td>
+                 <td>{{ x.email }}</td>
+                 <td>{{ x.mobile }}</td>
+                 <td>{{ x.query }}</td>
+                <td> <a href="/delData/{{ x.id }}"><span class="fa fa-trash"
+                                       style="color:red;
+                                       font-size: 30px;cursor: 
+                                       pointer;"></span></a> </td>
+                <td> <a href="https://wa.me/{{ x.mobile }}/?text=This message 
+                from E-Village Portal .Thanks for Enquiry how may I help you "><span 
+                                class="fa fa-whatsapp"
+                                       style="color:blue;
+                                       font-size: 30px;cursor: 
+                                       pointer;"></span></a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+{% endblock %}

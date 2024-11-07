@@ -1,0 +1,89 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+.dipu{
+    background: url('/static/images/v22.jpg') ;
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+.dipu2{
+    margin: 10% 0px;
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+}
+</style>
+<div class="container-fluid ">
+    <div class="row justify-content-center dipu">
+        <div class="col-md-8 dipu2">
+            <h2 class="text-center mb-4" style="color:whitesmoke "> Registration Form</h2>
+            <hr>
+            <form>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="first_name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="last_name" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="fathersName" class="form-label">Father's Name</label>
+                    <input type="text" class="form-control" id="fathersName" name="fathers_name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="form-check">
+                        <input class="form-check-input " type="radio" name="gender" id="male" value="Male" required>
+                        <label class="form-check-label" for="male">
+                           &nbsp;&nbsp;&nbsp;&nbsp; Male
+                        </label>
+                        <input class="form-check-input " type="radio" name="gender" id="female" value="Female" required>
+                        <label class="form-check-label" for="female">
+                          &nbsp;&nbsp;&nbsp;&nbsp;  Female
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Permanent Address</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact Number</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" pattern="[0-9]{10}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email (Optional)</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="profilePic" class="form-label">Profile Picture (Optional)</label>
+                    <input type="file" class="form-control" id="profilePic" name="profile_pic" accept="image/*">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirm_password" required>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" style="margin: 15px 0px;
+    border-radius:10px;
+    font-size: larger;
+    padding: 10px;">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

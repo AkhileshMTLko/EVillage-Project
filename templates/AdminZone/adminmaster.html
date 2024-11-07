@@ -1,0 +1,132 @@
+<html>
+<head>
+    {% load static %}
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header */
+        .header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Sidebar */
+        .sidebar {
+            background-color: #343a40;
+            color: white;
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            padding-top: 20px;
+            overflow-y: auto;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-bottom: 1px solid #495057;
+        }
+        .sidebar ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar ul li a:hover {
+            background-color: #495057;
+            color: white;
+        }
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+        /* Main Content */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            min-height: calc(100vh - 80px);
+        }
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .prapti {
+            background: url('/static/images/v22.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">Admin Zone</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/dash/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li>
+                <a data-toggle="collapse" href="#managementDropdown" class="collapsed"><i class="fa fa-cogs"></i> Management <i class="fa fa-chevron-down"></i></a>
+                <ul id="managementDropdown" class="collapse">
+                    <li><a href="/responsemgmt/"><i class="fa fa-reply"></i> Response Mgmt</a></li>
+                    <li><a href="/enquirymgmt/"><i class="fa fa-question-circle"></i> Enquiry Mgmt</a></li>
+                    <li><a href="/feedbackmgmt/"><i class="fa fa-comments"></i> Feedback Mgmt</a></li>
+                    <li><a href="/registrationmgmt/"><i class="fa fa-user-plus"></i> Registration Mgmt</a></li>
+                </ul>
+            </li>
+            <li><a href="/dynamicupdations/"><i class="fa fa-refresh"></i> Dynamic Updations</a></li>
+            <li>
+                <a data-toggle="collapse" href="#settingDropdown" class="collapsed"><i class="fa fa-cog"></i> Setting <i class="fa fa-chevron-down"></i></a>
+                <ul id="settingDropdown" class="collapse">
+                    <li><a href="/settingsmgmt/"><i class="fa fa-cog"></i> Settings</a></li>
+                    <li><a href="/chagepassword/"><i class="fa fa-key"></i> Change Password</a></li>
+                    <li><a href="/logoutData/"><i class="fa fa-sign-out"></i> Logout</a></li>
+                </ul>
+            </li>
+            <li><a href="/addscheme/"><i class="fa fa-sitemap"></i> Scheme</a></li>
+        </ul>
+    </div>
+   <div class="content">
+       {% block content %}
+       {% endblock %}
+       
+   </div>
+   
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; Admin Dashboard - Dipanshu kumar sah
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+    <style>
+    .dipu{
+        background: url('/static/images/v22.jpg') ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        width: 100%;
+    }
+    .dipu2{
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px black;
+        backdrop-filter: blur(5px);
+        height: 400px;
+        width: 50%;
+    }
+    </style>
+    
+      <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 dipu">
+      
+    <div class=" p-4 dipu2" >
+        <h3 class="text-center mb-2"><b>Forget Password</b></h3>
+        <hr>
+      <form action="/forgetData/" method="post">
+          {% csrf_token %}
+        <div class="mb-3">
+          <label for="text" class="form-label">Enter Registered Email ID</label>
+           <input type="text" name="adminid" class="form-control" id="Canditate" placeholder="Enter Id"></p>
+        </div>
+       
+          <button type="submit" class="btn btn-primary w-100" style="margin: 15px 0px;
+    border-radius: 25px;
+    font-size: larger;
+    padding: 10px;">Click</button>
+      </form>
+      <div class="text-center mt-3">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+            
+      </div>
+        
+    </div>
+    
+  </div>
+
+{% endblock %}

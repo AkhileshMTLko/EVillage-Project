@@ -1,0 +1,101 @@
+{% extends "master.html" %}
+{% block content %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+.dipu{
+    background: url('/static/images/v20.jpg') ;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position:fixed;
+}
+.dipu2{
+    padding: 1%;
+    height: fit-content;
+    margin: 10% 8%;
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+}
+.in input{
+    border-radius: 20px;
+        padding: 5px 20px
+}
+.btn{
+    font-size: large;
+    background: rgba(41, 172, 41, 0.73);
+}
+.btn:hover{
+    color: rgba(169, 169, 169, 0.78);
+    background: rgba(41, 172, 41, 0.51);
+}
+.dipu3 {
+    height: 400px;
+    width: 400px;
+    border: 5px solid white;
+    border-radius: 20px;
+    margin-top: 150px;
+}
+.dipu4{
+     margin: 10% 15%;
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+    height: 400px;
+    width: 800px;
+    border: 5px solid white;
+    margin-top: 150px;
+}
+
+.dipu4{
+    border-radius: 20px;
+}
+.map {
+    padding: 8%;
+}
+.dipu2 h1{
+    color:rgb(235 221 132 / 78%);
+}
+    </style>
+    <div class="container-fluid dipu">
+    <div class="row ">
+        <div class="col-sm-4 dipu2" >
+            <form action="/contactData/" method="post">
+                {% csrf_token %}
+            <div class="in">
+                <h3 style="text-align:center;color:whitesmoke">Contact Us</h3>
+                <center> <p class=" icofont-user"style="color:whitesmoke">User</p></center>
+                <center>   <input type="text" name="name" placeholder="Name" required style="min-height: 50px;width:350px;"></center><br>
+                <center>   <input type="number" name="mob" placeholder="Mobile:" required style="min-height: 50px;width:350px"></center><br>
+                <center>   <input type="email" name="email" placeholder="Email:" required style="min-height: 50px;width:350px"></center><br>
+                 <center>   <input type="text" name="query" placeholder="Query:" required style="min-height: 50px;width:350px"></center><br>
+                <center> <input type="submit" value="Submit" class="btn btn success"> </center>
+            </div>
+                </form>
+        </div>
+        <div class="col-sm-4 dipu2" >
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.894893487183!2d80.95090127528192!3d26.875080276669653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfdd563c25cbf%3A0xbcefbb4f300d416c!2z4KSu4KWI4KSV4KWI4KSf4KWN4KSw4KWH4KSh4KWN4KSc4KS8IOCkn-Clh-CkleCljeCkqOCli-CksuClieCknOClgCDgpKrgpYDgpLXgpYDgpJ_gpYAg4KSP4KSy4KSf4KWA4KSh4KWAIOCksuCkluCkqOCkig!5e0!3m2!1shi!2sin!4v1723637372933!5m2!1shi!2sin"
+                        width="390"
+                        height="390"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                
+            </div>
+            <h1 class="icofont-envelope" style="font-size:20px">&nbsp;&nbsp;kumardipanshu983542@gmail.com</h1>
+            <h1 class="icofont-ui-call" style="font-size:20px">&nbsp;&nbsp;+917667233823</h1>
+            <h1 class="icofont-location-pin" style="font-size:20px">&nbsp;&nbsp;Ministry of Panchayati Raj Government of India<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eleventh Floor, J.P. Building,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Kasturba Gandhi Marg, Connaught Place,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                New Delhi-110001</h1>
+        </div>
+    </div>
+    <div class="row dipu" >
+        
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    </div>
+{% endblock %}
